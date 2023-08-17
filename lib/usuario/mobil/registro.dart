@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:porcicultura/usuario/mobil/sesion.dart';
 
@@ -34,6 +35,8 @@ class regis_inisio extends StatelessWidget {
 class registro extends StatefulWidget {
   const registro({super.key});
 
+
+
   @override
   State<registro> createState() => _registroState();
 }
@@ -41,6 +44,10 @@ class registro extends StatefulWidget {
 class _registroState extends State<registro> {
   bool _isObscure = true;
   bool _isObscure2 = true;
+
+  TextEditingController correocontroller=TextEditingController(text: "");
+  TextEditingController contrasenacontroller=TextEditingController(text: "");
+  TextEditingController contrasenaConfirmarController = TextEditingController(text: "");
 
   @override
   Widget build(BuildContext context) {
@@ -124,19 +131,34 @@ class _registroState extends State<registro> {
                           Container(
                             margin: EdgeInsets.only(top: 30 ,left: imagen*2.2),
                             child: Center(
-                              child: ElevatedButton(onPressed: () {
-                                Navigator.push(context, MaterialPageRoute(
-                                  builder: (context)=>inicio_sesion(),
-                                )
-                                );
-                                //action
-                              } , child: Text('REGISTRAR'),
+                              child: ElevatedButton(
+                                onPressed: () async {
+                                  if (contrasenacontroller.text == contrasenaConfirmarController.text) {
+                                    try {
+                                      await FirebaseAuth.instance.createUserWithEmailAndPassword(
+                                        email: correocontroller.text,
+                                        password: contrasenacontroller.text,
+                                      );
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(builder: (context) => inicio_sesion()),
+                                      );
+                                    } catch (e) {
+                                      print('Error de registro: $e');
+                                      // Manejo de errores, muestra un mensaje al usuario si es necesario
+                                    }
+                                  } else {
+                                    // Las contraseñas no coinciden, muestra un mensaje de error al usuario
+                                    print('Las contraseñas no coinciden');
+                                  }
+                                },
+                                child: Text('REGISTRAR'),
                                 style: ButtonStyle(
                                   overlayColor: MaterialStateProperty.resolveWith<Color?>(
                                         (Set<MaterialState> states) {
                                       if (states.contains(MaterialState.pressed))
-                                        return Color.fromRGBO(121, 101, 178, 100); //<-- SEE HERE
-                                      return null; // Defer to the widget's default.
+                                        return Color.fromRGBO(121, 101, 178, 100);
+                                      return null;
                                     },
                                   ),
                                 ),
@@ -225,6 +247,7 @@ class _registroState extends State<registro> {
     return Container(
       height: 60,
       child: TextFormField(
+        controller:correocontroller,
         keyboardType: TextInputType.name,
         style: TextStyle(
           fontSize: 20,
@@ -257,6 +280,7 @@ class _registroState extends State<registro> {
     return Container(
       height: 60,
       child: TextFormField(
+        controller:contrasenacontroller,
         keyboardType: TextInputType.name,
         style: TextStyle(
           fontSize: 20,
@@ -295,10 +319,13 @@ class _registroState extends State<registro> {
     );
   }
 
+
+
   Container contra2(){
     return Container(
       height: 60,
       child: TextFormField(
+        controller: contrasenaConfirmarController,
         keyboardType: TextInputType.name,
         style: TextStyle(
           fontSize: 20,
@@ -336,6 +363,7 @@ class _registroState extends State<registro> {
       ),
     );
   }
+
 }
 
 class Tooltipicono extends StatelessWidget {

@@ -3,9 +3,15 @@ import 'package:porcicultura/splash/splash_desktop.dart';
 import 'package:porcicultura/splash/splash_mobil.dart';
 import 'package:porcicultura/splash/splash_tablet.dart';
 import 'responsive/responsive_layout.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-void main() {
-  runApp (const MyApp());
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {

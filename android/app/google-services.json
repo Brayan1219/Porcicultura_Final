@@ -1,0 +1,90 @@
+{
+  "project_info": {
+    "project_number": "350516041508",
+    "project_id": "porcino-44a0f",
+    "storage_bucket": "porcino-44a0f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:350516041508:android:9e053d6b7f21972ecb05b1",
+        "android_client_info": {
+          "package_name": "com.example.porci"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "350516041508-g44urfua26l70rdcc2ouelcv26bpe3de.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.porci",
+            "certificate_hash": "36fad16b72174270d80b25b575f5c899be97be2f"
+          }
+        },
+        {
+          "client_id": "350516041508-c4dkiib7ulit89p5hrf1igl66hr7d6h6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbNHzYbbOHiebDP5-Isp6I7T3xn6s2bs0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "350516041508-c4dkiib7ulit89p5hrf1igl66hr7d6h6.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "350516041508-6t48046c82c3t6ja47ujfsr9tabs9tta.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.porci.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:350516041508:android:d0dd2a64b64a9186cb05b1",
+        "android_client_info": {
+          "package_name": "com.example.porcicultura"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "350516041508-c4dkiib7ulit89p5hrf1igl66hr7d6h6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbNHzYbbOHiebDP5-Isp6I7T3xn6s2bs0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "350516041508-c4dkiib7ulit89p5hrf1igl66hr7d6h6.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "350516041508-6t48046c82c3t6ja47ujfsr9tabs9tta.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.porci.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

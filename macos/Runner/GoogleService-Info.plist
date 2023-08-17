@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>350516041508-p1us4vai72pep8afuub2nq2ta7s7tk7j.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.350516041508-p1us4vai72pep8afuub2nq2ta7s7tk7j</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>350516041508-g44urfua26l70rdcc2ouelcv26bpe3de.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyA6syQlLS5SHYZsLVToApJ5bVIjAtV4QP0</string>
+	<key>GCM_SENDER_ID</key>
+	<string>350516041508</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.porcicultura.RunnerTests</string>
+	<key>PROJECT_ID</key>
+	<string>porcino-44a0f</string>
+	<key>STORAGE_BUCKET</key>
+	<string>porcino-44a0f.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:350516041508:ios:e33246bb24c7f8f2cb05b1</string>
+</dict>
+</plist>

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:porcicultura/usuario/mobil/registro.dart';
+import '../../Services/firebase_service.dart';
 import '../../widgets/contenedor2.dart';
 import 'interfaz/home.dart';
 
@@ -41,6 +42,9 @@ class sesion extends StatefulWidget {
 
 class _sesionState extends State<sesion> {
   bool _isObscure = true;
+
+  TextEditingController correocontroller=TextEditingController(text: "");
+  TextEditingController contrasenacontroller=TextEditingController(text: "");
 
   @override
   Widget build(BuildContext context) {
@@ -116,13 +120,23 @@ class _sesionState extends State<sesion> {
                       Container(
                         margin: EdgeInsets.only(top: 30 ),
                         child: Center(
-                          child: ElevatedButton(onPressed: () {
-                            Navigator.push(context, MaterialPageRoute(
-                              builder: (context)=>ini_usuario(),
-                            )
-                            );
-                            //action
-                          } , child: Text('INICIAR SESION'),
+                          child: ElevatedButton(
+                            onPressed: () async {
+                              try {
+                                await Auth().signInWithEmailAndPassword(
+                                  email: correocontroller.text,
+                                  password: contrasenacontroller.text,
+                                );
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => inicio()),
+                                );
+                              } catch (error) {
+                                print('Error al iniciar sesión: $error');
+                                // Puedes mostrar un mensaje de error al usuario si lo deseas
+                              }
+                            },
+                            child: Text('INICIAR SESION'),
                             style: ButtonStyle(
                               overlayColor: MaterialStateProperty.resolveWith<Color?>(
                                     (Set<MaterialState> states) {
@@ -212,6 +226,7 @@ class _sesionState extends State<sesion> {
     return Container(
       height: 60,
       child: TextFormField(
+        controller: correocontroller,
         keyboardType: TextInputType.name,
         style: TextStyle(
           fontSize: 20,
@@ -244,6 +259,7 @@ class _sesionState extends State<sesion> {
     return Container(
       height: 60,
       child: TextFormField(
+        controller: contrasenacontroller,
         keyboardType: TextInputType.name,
         style: TextStyle(
           fontSize: 20,
