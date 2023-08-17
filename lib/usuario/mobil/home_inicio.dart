@@ -55,13 +55,13 @@ class _homeState extends State<home> {
           children: <Widget>[
             Positioned(
                 top: -imagen * 2.4,
-                left: -imagen * 1.5,
+                left: -imagen * 2.8,
                 child: fondo(
-                  size: size.width * 1.3,
+                  size: size.width * 1.6,
                 )
             ),
             Positioned(
-              top: size.width* 0.70,
+              top: size.width* 1.1,
               child: Padding(
                 padding: const EdgeInsets.all(0),
                 child: contenedor(
@@ -73,10 +73,15 @@ class _homeState extends State<home> {
               child: Padding(
                 padding: const EdgeInsets.all(0),
                 child: Container(
-                  margin: EdgeInsets.only(top: imagen*6.5,left: imagen*3),
-                  width: size.width*0.4,
-                  height: 100,
-                  color: Colors.green,
+                  margin: EdgeInsets.only(top: imagen*9.8,left: imagen*2.5),
+                  width: size.width*0.5,
+                  height: 150,
+                 // color: Colors.green,
+                  decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage('img/cerdo.png'),
+                      )
+                  ),
                 ),
               ),
             ),
@@ -84,7 +89,7 @@ class _homeState extends State<home> {
               child: Padding(
                 padding: const EdgeInsets.all(0),
                 child: Container(
-                  margin: EdgeInsets.only(top: imagen*10,left: imagen*1.5),
+                  margin: EdgeInsets.only(top: imagen*14,left: imagen*1.5),
                   width: size.width*0.7,
                   height: size.height*0.1,
                   //color: Colors.green,
@@ -99,7 +104,7 @@ class _homeState extends State<home> {
                   margin: EdgeInsets.only(top: imagen*13,left: imagen*0.5),
                   width: size.width*0.9,
                   height: size.height*0.1,
-                  color: Colors.green,
+                  //color: Colors.green,
                 ),
               ),
             )
